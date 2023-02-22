@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const onMenuClick = (path) => {
-  router.push({ name: path })
+  router.push({ name: path, replace: true })
 }
 </script>
 
