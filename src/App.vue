@@ -1,6 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useUserStore } from '@/store'
+
 const router = useRouter()
+const userStore = useUserStore()
 
 const onMenuClick = (path) => {
   router.push({ name: path, replace: true })
