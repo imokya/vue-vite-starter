@@ -18,7 +18,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "autoprefixer": "^10.4.13",
     "lil-gui": "^0.18.0",
+    "postcss": "^8.4.21",
+    "postcss-pxtorem": "^6.0.0",
     "sass": "^1.58.3",
     "vite": "^4.1.0",
     "vite-plugin-glsl": "^1.1.2"
