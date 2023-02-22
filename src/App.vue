@@ -11,7 +11,7 @@ const onMenuClick = (path) => {
 </script>
 
 <template>
-  <div class="app">
+  <div class="ui">
     <nav>
       <ul>
         <li><a href="#" @click.prevent="onMenuClick('home')">Home</a></li>
@@ -19,11 +19,38 @@ const onMenuClick = (path) => {
         <li><a href="#" @click.prevent="onMenuClick('contact')">Contact</a></li>
       </ul>
     </nav>
-    <RouterView />
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.fade-enter-from {
+  opacity: 0;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-leave-active {
+  transition: all 3s ease-out;
+}
+
 ul {
   display: flex;
   align-items: center;
