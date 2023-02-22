@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import glsl from 'vite-plugin-glsl'
 import path from 'path'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), glsl()],
   server: {
     port: 3000,
     host: '0.0.0.0',
@@ -18,5 +19,6 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
-  }
+  },
+  base: '/'
 })
