@@ -6,6 +6,21 @@ import config from './config'
 
 export default defineConfig({
   plugins: [vue(), glsl()],
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          let extType = assetInfo.name.split('.')[1]
+          if (/png|jpe?g|svg|gif/i.test(extType)) {
+            extType = 'img'
+          }
+          return `assets/${extType}/[name]-[hash][extname]`
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js'
+      }
+    }
+  },
   server: {
     port: 3000,
     host: '0.0.0.0',
