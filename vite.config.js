@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { ViteEjsPlugin } from 'vite-plugin-ejs'
 import glsl from 'vite-plugin-glsl'
 import path from 'path'
 import config from './config'
 
 export default defineConfig({
-  plugins: [vue(), glsl()],
+  plugins: [vue(), glsl(), ViteEjsPlugin({ config })],
   build: {
     rollupOptions: {
       output: {
