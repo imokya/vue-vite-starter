@@ -29,7 +29,7 @@ export default class Resource extends EventEmitter {
     this.loaders = {}
     this.loaders.gltfLoader = new GLTFLoader()
     this.loaders.dracoLoader = new DRACOLoader()
-    this.loaders.dracoLoader.setDecoderPath(`${config.publicPath}draco/`)
+    this.loaders.dracoLoader.setDecoderPath(`${config.publicPath}static/draco/`)
     this.loaders.dracoLoader.preload()
     this.loaders.gltfLoader.setDRACOLoader(this.loaders.dracoLoader)
     this.loaders.exrLoader = new EXRLoader()
@@ -41,7 +41,7 @@ export default class Resource extends EventEmitter {
 
   startLoading() {
     for (const item of this.source) {
-      const path = config.publicPath + item.path
+      const path = config.publicPath + 'static/' + item.path
       if (item.type == 'gltfModel') {
         this.loaders.gltfLoader.load(path, (file) => {
           this.sourceLoaded(item, file)
