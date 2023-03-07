@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
 import { createArticle } from '@/api/article'
-import cloudbase from '@cloudbase/js-sdk'
 
 const onCreateArticle = async () => {
   const res = await createArticle({
