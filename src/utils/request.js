@@ -20,7 +20,7 @@ service.interceptors.response.use(
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
       if (res.code === 0) {
-        return res.data
+        return res
       } else {
         showToast('Error')
         return Promise.reject(new Error('Error'))

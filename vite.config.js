@@ -10,11 +10,13 @@ export default defineConfig({
     port: 3000,
     host: '0.0.0.0',
     proxy: {
-      '/api': {
-        target: 'http://web/',
-        changeOrigin: true
+      '/dev-api': {
+        target: 'https://adm.xinapp.net/api/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/dev-api/, '')
       }
-    }
+    },
+    cors: true
   },
   resolve: {
     alias: {
