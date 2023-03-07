@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from '@/router'
 import { Toast } from 'vant'
 import { createPinia } from 'pinia'
+import VConsole from 'vconsole'
 
 // create three.js canvas
 // import Experience from '@/experience/experience'
@@ -18,3 +19,5 @@ app.use(pinia)
 app.use(router)
 
 app.mount('#app')
+
+new VConsole()

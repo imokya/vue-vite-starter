@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { createArticle } from '@/api/article'
+import cloudbase from '@cloudbase/js-sdk'
 
 const onCreateArticle = async () => {
   const res = await createArticle({
@@ -32,7 +33,7 @@ const onCreateArticle = async () => {
   margin: 0 10px;
   position: absolute;
   background: transparent;
-  top: 100px;
+  top: 70px;
   left: 20px;
 }
 </style>
