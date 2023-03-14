@@ -1,5 +1,5 @@
 const config = {
-  publicPath: 'https://cdn.xinapp.net/if/'
+  publicPath: '/'
 }
 
 export default config

@@ -1,27 +1,35 @@
 <script setup>
 import { onMounted } from 'vue'
 import { createArticle } from '@/api/article'
+import { useUserStore } from '@/store'
 
-const onCreateArticle = async () => {
-  const res = await createArticle({
-    title: '这是新增文章标题'
-  })
-  console.log(res)
+const userStore = useUserStore()
+const increment = () => {
+  userStore.increment()
 }
 </script>
 
 <template>
   <div class="page home">
-    <button class="btn-add" @click="onCreateArticle">添加文章</button>
-    <img src="@/assets/avatar.jpg" />
+    <div class="container">
+      <div class="counter">count: {{ userStore.count }}</div>
+      <button class="btn-add" @click="increment">增加计数</button>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@import '@/css/mixins.scss';
 .home {
   background-color: blueviolet;
   overflow: hidden;
   position: relative;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
 }
 .btn-add {
   font-size: 14px;
@@ -29,8 +37,6 @@ const onCreateArticle = async () => {
   border-radius: 5px;
   padding: 5px 10px;
   text-align: center;
-  margin: 0 10px;
-  position: absolute;
   background: transparent;
   top: 70px;
   left: 20px;

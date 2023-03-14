@@ -3,11 +3,11 @@ import { defineStore } from 'pinia'
 export const useUserStore = defineStore('user', {
   state: () => ({
     name: 'david',
-    balance: 1000
+    count: 0
   }),
   actions: {
     increment() {
-      this.balance += 10
+      this.count += 1
     }
   }
 })

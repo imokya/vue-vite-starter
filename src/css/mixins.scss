@@ -1,0 +1,5 @@
+@mixin smallDevice {
+  @media screen and (max-height: 1300px) {
+    @content;
+  }
+}

@@ -1,5 +1,5 @@
 import 'vant/lib/index.css'
-import './style.scss'
+import './css/style.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'
