@@ -1,17 +1,12 @@
-import Experience from '../experience'
+import Experience from '@/experience'
 import {
-  PMREMGenerator,
-  HemisphereLight,
-  DirectionalLight,
-  DirectionalLightHelper,
-  CameraHelper,
-  AmbientLight
+  PMREMGenerator
 } from 'three'
-import { RoomEnvironment } from '../objects/RoomEnvironment'
+import { RoomEnvironment } from '../environment/RoomEnvironment'
 
 export default class Environment {
   constructor() {
-    this.experience = new Experience()
+    this.experience = Experience.getInstance()
     this.resource = this.experience.resource
     this.renderer = this.experience.renderer
     this.scene = this.experience.scene

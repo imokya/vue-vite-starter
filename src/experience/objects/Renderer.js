@@ -1,4 +1,4 @@
-import Experience from './experience'
+import Experience from '@/experience'
 import {
   WebGLRenderer,
   sRGBEncoding,
@@ -9,7 +9,6 @@ import {
   PCFShadowMap,
   Vector2
 } from 'three'
-import util from './utils'
 
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
@@ -24,7 +23,7 @@ const postprocessingOn = false
 
 export default class Renderer {
   constructor() {
-    this.experience = new Experience()
+    this.experience = Experience.getInstance()
     this.size = this.experience.size
     this.scene = this.experience.scene
     this.canvas = this.experience.canvas
@@ -56,7 +55,7 @@ export default class Renderer {
   setInstance() {
     this.instance = new WebGLRenderer({
       canvas: this.canvas,
-      antialias: !util.isMobile(),
+      antialias: true,
       alpha: true,
       logarithmicDepthBuffer: false,
       powerPreference: 'high-performance'

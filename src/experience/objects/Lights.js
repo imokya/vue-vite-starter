@@ -1,9 +1,9 @@
 import { DirectionalLight, AmbientLight, CameraHelper } from 'three'
-import Experience from '@/experience/experience'
+import Experience from '@/experience'
 
 export default class Lights {
   constructor() {
-    this.experience = new Experience()
+    this.experience = Experience.getInstance()
     this.scene = this.experience.scene
     this._init()
   }

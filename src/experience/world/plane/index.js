@@ -1,8 +1,8 @@
-import Experience from '@/experience/experience'
+import Experience from '@/experience'
 
 export default class Plane {
   constructor() {
-    this.experience = new Experience()
+    this.experience = Experience.getInstance()
     this.resource = this.experience.resource
     this.scene = this.experience.scene
     this._init()
@@ -11,5 +11,9 @@ export default class Plane {
   _init() {
     const model = this.resource.items.plane.scene
     this.scene.add(model)
+  }
+
+  update() {
+    
   }
 }

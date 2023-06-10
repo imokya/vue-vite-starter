@@ -8,8 +8,8 @@ import { createPinia } from 'pinia'
 import VConsole from 'vconsole'
 
 // create three.js canvas
-// import Experience from '@/experience/experience'
-// const experience = new Experience(document.querySelector('#canvas'))
+import Experience from '@/experience'
+new Experience(document.querySelector('#canvas'))
 
 const pinia = createPinia()
 const app = createApp(App)

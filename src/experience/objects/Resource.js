@@ -1,4 +1,4 @@
-import EventEmitter from './eventEmitter'
+import EventEmitter from '../utils/EventEmitter'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader'

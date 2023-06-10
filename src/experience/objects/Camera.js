@@ -1,11 +1,12 @@
-import Experience from './experience'
+import Experience from '@/experience'
 import { Vector3, PerspectiveCamera } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import config from '~/config'
 
 export default class Camera {
   constructor() {
-    this.experience = new Experience()
+
+    this.experience = Experience.getInstance()
     this.size = this.experience.size
     this.scene = this.experience.scene
     this.canvas = this.experience.canvas
@@ -13,6 +14,7 @@ export default class Camera {
     this.origin = new Vector3(10, 20, 30)
     this.setInstance()
     this.setOrbitControls()
+
   }
 
   setInstance() {
