@@ -1,19 +1,13 @@
-import Experience from '@/experience'
+import Element from '@/experience/objects/Element'
 
-export default class Plane {
+export default class Plane extends Element {
   constructor() {
-    this.experience = Experience.getInstance()
-    this.resource = this.experience.resource
-    this.scene = this.experience.scene
+    super()
     this._init()
   }
 
   _init() {
     const model = this.resource.items.plane.scene
     this.scene.add(model)
-  }
-
-  update() {
-    
   }
 }

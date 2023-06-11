@@ -18,7 +18,6 @@ export default class World {
   }
 
   update() {
-    const { elapsed, delta } = this.time
     this.plane && this.plane.update()
   }
 }
