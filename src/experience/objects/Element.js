@@ -7,6 +7,7 @@ export default class Element {
     this.camera = this.experience.camera
     this.scene = this.experience.scene
     this.time = this.experience.time
+    this.world = this.experience.world
   }
 
   update() {}
