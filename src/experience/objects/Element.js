@@ -11,4 +11,5 @@ export default class Element {
   }
 
   update() {}
+  resize() {}
 }

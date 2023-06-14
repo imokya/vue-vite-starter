@@ -10,14 +10,11 @@ import Debug from './objects/Debug'
 import source from './objects/Source'
 import Lights from './objects/Lights'
 
-
 export default class Experience {
-
   static instance
 
   constructor(canvas) {
-    
-    if(Experience.instance) {
+    if (Experience.instance) {
       return Experience.instance
     }
     Experience.instance = this
@@ -42,13 +39,14 @@ export default class Experience {
 
   setListeners() {
     window.addEventListener('resize', this.resize.bind(this))
-    this.animationFrameId = window.requestAnimationFrame(this.update.bind(this)) 
+    this.animationFrameId = window.requestAnimationFrame(this.update.bind(this))
   }
 
   resize() {
     this.size.resize()
     this.camera.resize()
     this.renderer.resize()
+    this.world.resize()
   }
 
   update() {

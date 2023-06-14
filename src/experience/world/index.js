@@ -20,4 +20,6 @@ export default class World {
   update() {
     this.plane && this.plane.update()
   }
+
+  resize() {}
 }
