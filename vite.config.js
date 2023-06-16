@@ -18,27 +18,27 @@ export default defineConfig({
           return `assets/${extType}/[name]-[hash][extname]`
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js'
-      }
-    }
+        entryFileNames: 'assets/js/[name]-[hash].js',
+      },
+    },
   },
   server: {
     port: 3000,
     host: '0.0.0.0',
     proxy: {
       '/dev-api': {
-        target: 'https://adm.xinapp.net/api/',
+        target: 'https://adm.xxxx.net/api/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/dev-api/, '')
-      }
+        rewrite: (path) => path.replace(/^\/dev-api/, ''),
+      },
     },
-    cors: true
+    cors: true,
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '~': path.resolve(__dirname, './')
-    }
+      '~': path.resolve(__dirname, './'),
+    },
   },
-  base: config.publicPath
+  base: config.publicPath,
 })
