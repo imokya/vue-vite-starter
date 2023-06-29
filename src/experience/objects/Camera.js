@@ -5,16 +5,14 @@ import config from '~/config'
 
 export default class Camera {
   constructor() {
-
     this.experience = Experience.getInstance()
     this.size = this.experience.size
     this.scene = this.experience.scene
     this.canvas = this.experience.canvas
 
-    this.origin = new Vector3(10, 20, 30)
+    this.origin = new Vector3(50, 500, 1000)
     this.setInstance()
     this.setOrbitControls()
-
   }
 
   setInstance() {

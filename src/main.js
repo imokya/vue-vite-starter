@@ -19,5 +19,3 @@ app.use(pinia)
 app.use(router)
 
 app.mount('#app')
-
-new VConsole()

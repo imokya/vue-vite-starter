@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vue vite starter</title>
+  <title>Firework Effect</title>
 </head>
 
 <body>
@@ -12,20 +12,6 @@
   <canvas id="canvas"></canvas>
   <script type="module" src="/src/main.js"></script>
   <script src="<%= config.publicPath %>static/js/wechat.share.js"></script>
-  <script>
-    var shareData = {
-      title: "分享标题",
-      desc: "分享描述",
-      link: location.href,
-      imgUrl: "<%= config.publicPath %>static/img/share.jpg",
-    };
-    const ws = new WechatShare({
-      config: {
-        debug: false
-      },
-      data: shareData
-    });
-  </script>
 </body>
 
 </html>

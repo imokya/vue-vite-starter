@@ -1,18 +1,18 @@
 import Element from '@/experience/objects/Element'
 import Environment from './Environment'
-import Plane from './Plane'
+import Firework from './firework'
 
 export default class World extends Element {
   constructor() {
     super()
     this.resource.on('ready', () => {
       this.environment = new Environment()
-      this.plane = new Plane()
+      this.firework = new Firework()
     })
   }
 
   update() {
-    this.plane && this.plane.update()
+    this.firework && this.firework.update()
   }
   resize() {}
 }

@@ -1,1 +1,1 @@
-# vue vite starter
+# three.js firework effect
